@@ -9,38 +9,36 @@
 \usepackage[empty]{fullpage}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
+\usepackage{multicol}
 \usepackage[pdftex]{hyperref}
 \hypersetup{
     colorlinks,%
     citecolor=black,%
     filecolor=black,%
     linkcolor=black,%
-    urlcolor=black     % can put red here to visualize the links
+    urlcolor=black     %
 }
 \urlstyle{same}
-\definecolor{mygrey}{gray}{.85}
+\definecolor{mygrey}{gray}{.70}
 \definecolor{mygreylink}{gray}{.30}
 \textheight=9.0in
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.375in}
 \addtolength{\evensidemargin}{0.375in}
 \addtolength{\textwidth}{0.5in}
-\addtolength{\topmargin}{-.375in}
+\addtolength{\topmargin}{-.4in}
 \addtolength{\textheight}{0.75in}
 
-%-----------------------------------------------------------
-%Custom commands
-\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
-\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+%Start Custom commands
+\newcommand{\resitem}[1]{\item[] #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\Large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
 \newcommand{\ressubheading}[4]{
 \begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
 		\textbf{#1} & #2 \\
-		\textit{#3} & \textit{#4} %\\
-		%#5
+		\textbf{#3} & \textbf{#4}
 \end{tabular*}\vspace{-6pt}}
 
 \newcommand{\projectheading}[1]{
@@ -54,38 +52,33 @@
 		\textit{#2}
 \end{tabular*}\vspace{6pt}}
 
-%End Custom commands
-%-----------------------------------------------------------
+%End Custom Commands
 
 \begin{document}
 
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-	\textbf{\href{https://github.com/rishidewan33}{\LARGE Rishi Dewan}} & \href{mailto:rishidewan33@gmail.com}{rishidewan33@gmail.com}\\
-	{2704 Rio Grande St.\#512} & \href{https://github.com/rishidewan33}{https://github.com/rishidewan33} \\
-	{Austin, TX 78705} & {Phone: 281-732-6108}\\
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}l}
+	\textbf{{\LARGE Rishi Dewan}} & {\textbf{E-mail}: rishidewan33@gmail.com}\\
+	{2207 Leon St. \#204} & {\textbf{Portfolio}: https://github.com/rishidewan33} \\
+	{Austin, TX 78705} & {\textbf{Phone}: 281-732-6108}\\
 	\end{tabular*}
-\\
 \vspace{0.1in}
 
-%%%%%%%%%%%%%%%%%%%%%%
 \resheading{Education}
-	\begin{itemize}
-		\item
-			\ressubheading{\href{http://www.utexas.edu}{The University of Texas at Austin}}{Austin, TX}{\href{http://www.cs.utexas.edu}{Bachelor of Science in Computer Science}}{Aug. 2006 -- May. 2011}%{GPA: 2.60/4.00}
-				{
-				\begin{itemize}
-					\resitem{\textbf{Relevant Courses}: \href{http://www.cs.utexas.edu/users/mckinley/352/}{Computer Systems Architecture}, \href{http://www.cs.utexas.edu/~dahlin/Classes/UGOS/index.html}{Introduction to Operating Systems}, \href{http://www.cs.utexas.edu/~plaxton/c/357/index.html}{Design and Analysis of Algorithms}, \href{http://www.cs.utexas.edu/~novak/cs315.html}{Algorithms and Data Structures}}
-				\end{itemize}
-				}
-	\end{itemize} % End Education list
+	\begin{description}
+		\item[]
+			\ressubheading{{The University of Texas at Austin}}{Austin, TX}{{Bachelor of Science in Computer Science}}{Graduation Date: May 2011}
+\end{description} 
+\begin{description}
+\item[]
+\textit{Sample Coursework}: Computer Systems Architecture, Introduction to Operating Systems, Design and Analysis of Algorithms, Algorithms and Data Structures, Software Design, Debugging and Verifying Programs, Introduction to Computer Security
+\end{description}% End Education list
 
 \resheading{Technical Skills}
 	\begin{description}
-		\item[Language Experience:] {C/C++ (1 year), Java (4 years), Python (2 years)}
-		\item[Programming Exposure in:] {C\#.NET, ASP.NET, UML, \LaTeX, HTML, CSS, SQL}
-		\item[Computer and OS:] {Proficient in Ubuntu Linux, Windows 9x, XP, Vista, Mac OS X Snow Leopard}
-		\item[Software:]{\href{http://msdn.microsoft.com/en-us/library/ms950416.aspx}{MS Visual Studio}, \href{http://netbeans.org/}{Netbeans IDE}, \href{http://git-scm.com/}{git}, \href{http://www.realvnc.com/}{RealVNC}, \href{http://www.openoffice.org/}{OpenOffice (and Microsoft Office)}, SSH Secure Shell, \href{http://www.gnu.org/software/gdb/}{GNU Debugger},VirtualBox}
-		\item[Programming Paradigms:]{Object-Oriented Programming, Multithreaded Programming, Design Patterns}
+		\item[Programming Languages:] {C/C++, Java, Python, C\#, ASP.NET, UML, \LaTeX, HTML, CSS, SQL}
+		\item[OS:] {Ubuntu Linux, Windows 9x, XP, Vista, Mac OS X}
+		\item[Software:]{Microsoft Visual Studio 2010, Netbeans IDE, git, VirtualBox, RealVNC, OpenOffice/Microsoft Office, SSH Secure Shell}
+		\item[Programming Paradigms:]{Object-Oriented Programming, Multithreaded Programming, Design Patterns, Refactorings}
 	\end{description} % End Skills list
 
 \resheading{Programming Projects}
@@ -93,40 +86,47 @@
 		\item 
 			\projectheading{Atomic Disk}
 				{
-				\begin{itemize}
-					{Implemented an abstraction of a hard disk in Java which incorporated}
-					{the use of transactions in order to apply reads/writes to multiple}
-					{disk sectors in the disk abstraction atomically (i.e. as a single operation).}
+				\begin{itemize}\vspace{-6pt}
+					{Implemented an abstraction of a hard disk in \textbf{Java} which}
+					{uses the concept of transactions and logging in order to apply multiple}
+					{disk sector writes atomically .}
 				\end{itemize}
 				}
 		\item
 			\projectheading{Cooperative Thread Package API}
 				{
-				\begin{itemize}
-					{Developed a User-Level-Threads library in C which uses context manipulation}
+				\begin{itemize}\vspace{-6pt}
+					{Developed a User-Level Threads library in \textbf{C} which uses context manipulation}
 					{to allow users to use the library to create and organize control of threads at a user level.}
+					{This library requires the ucontext header file.}
 				\end{itemize}
         			}
-\begin{comment}
-        	\item
-			\projectheading{Proportional-Share Network Scheduler}
-				{
-				\begin{itemize}
-					{Wrote methods for a network scheduler program in C++. Although}
-					{not many lines of code were written, the goal of the project was to acquire}
-					{experience in writing and debugging multithreaded code, as well as}
-					{learning to correctly use synchronization data types such as monitors.}
-				\end{itemize}
-				}
-\end{comment}
+
 		\item 
-			\projectheading{Advanced Encryption Standard Algorithm}
+			\projectheading{Advanced Encryption Standard}
 				{
-				\begin{itemize}
-					{Wrote an implementation of the AES algorithm, which is a symmetric-key encryption}
-					{standard in both Java (128/256-bit) and Python (128/192/256-bit).}
+				\begin{itemize}\vspace{-6pt}
+					{Wrote an implementation of the AES algorithm, a symmetric-key encryption}
+					{in both \textbf{Java} (128/256-bit) and \textbf{Python} (128/192/256-bit).}
 				\end{itemize}
 				}
+		\item
+			\projectheading{SET Puzzle Game}
+				{
+				\begin{itemize}\vspace{-6pt}
+					{Implemented a GUI desktop application of the puzzle card game SET(www.setgame.com) in \textbf{Python}.}
+					{This application uses Python's GUI toolkit}
+					{\textit{TKinter}.}
+				\end{itemize}
+				}
+		\item
+			\projectheading{Building Manager's Web Page}
+				{
+				\begin{itemize}\vspace{-6pt}
+					{Redesigned the website for the Texas Union Building Managers in \textbf{ASP.NET with C\#} using}
+					{LINQ to XML querying, AJAX, and the basic query techniques using SQL Server.}
+				\end{itemize}
+				}\vspace{-6pt}
 \begin{comment}
 		\item			
 			\projectheading{L1 Cache Simulator}
@@ -137,81 +137,33 @@
 					{of actual cache hardware, such as write backs, write allocations, and the LRU replacement algorithm.}
 				\end{itemize}
 				}
-\end{comment}
-		\item
-			\projectheading{SET Puzzle Game}
+        		\item
+			\projectheading{Proportional-Share Network Scheduler}
 				{
-				\begin{itemize}
-					{Implemented a GUI Python clone application of the puzzle card game SET \href{http://www.setgame.com}{(www.setgame.com)}.}
-					{This program was an introduction into GUI Programming using Python's GUI toolkit}
-					{\textit{TKinter}.}
+				\begin{itemize}\vspace{-6pt}
+					{Implemented a simple network scheduler program in C++. The goal of the project was to acquire}
+					{experience in writing and debugging multithreaded code.}
 				\end{itemize}
 				}
+\end{comment}
 	\end{itemize}  % End Experience list
 
 \resheading{Work Experience}
 	\begin{itemize}
 	 \item
 	    \workheading{University Unions}{Building Manager}{Sept. 2010 - May 2011}
-	      { \begin{itemize}
-	        \item{In charge of managing the security of all patrons in the building and the building itself.}
-	        \item{Performed hourly rounds and performed cash escorts for employees within the building}
-		\item{Learned to operate Mac OS X on the work computer by working with bash shell commands, and learning about various Mac applications}
+	      { \begin{itemize}\vspace{-10pt}
+	        \item{Managed the security of all patrons in the building and the building itself.}
+	        \item{Acted as a liaison between various Union Departments regarding building events and protocols.}
 	        \end{itemize}
 	      }
 
 	 \item
 	    \workheading{University of Texas at Austin - Division of Housing and Food}{Night Supervisor}{Jan. 2009 - Mar. 2010}
-	      { \begin{itemize}
-	         \item{In charge of managing the safety and security of multiple thousands of residents located in the university dorms.}
-		 \item{Resolved general problems (i.e. between resident advisors, dorm coordinators, and personnel in the housing department.)}
+	      { \begin{itemize}\vspace{-10pt}
+	         \item{Responsible for the safety and security of multiple thousands of residents located in the university dorms.}
+		 \item{Communiated with resident advisors, dorm coordinators regarding students and their disputes with dorm policy.}
 	        \end{itemize}
 	      }
 	\end{itemize} %End Work Experience List
-
-% \resheading{Activities}
-% \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-%   \item
-%   {
-%    {Assocation of Computing Machinery} & \textit{2008 - 2011}
-%   }
-%    {Indian Student Assocation} & \textit{2008 - 2010}
-% \end{tabular*}
-
-
-
-\vfill
-\begin{flushright}
-\em{This r\'{e}sum\'{e} was written and compiled in \LaTeX.}
-\end{flushright}
-
-% \resheading{General Skills}
-% 	\begin{itemize}
-% 	\item
-% 	  \projectheading{Teamwork Oriented}
-% 	    \begin{itemize}
-% 	    \item{Worked with partners on program assignments, where we navigate through coding and point out and discuss potential errors and as well as design plans.}
-% 	    \end{itemize}
-% 	\item
-% 	  \projectheading{Communication Skills}
-% 	    \begin{itemize}
-% 	     \item{Demonstrated while working on programming projects by communicating design and debugging ideas with project parnters. Also demonstrated }
-% 	    \end{itemize}
-% 	\item
-% 	  \projectheading{Problem Solving Skills}
-% 	    \begin{itemize}
-% 	     \item{Given the programming projects that required strong understanding of the specifications, scrutinized designing and planning was executed in order to complete these projects.}
-% 	    \end{itemize}
-% 	\item
-% 	  \projectheading{Strong Dedication}
-% 	    \begin{itemize}
-% 	     \item{Allocated many hours per week working on programming projects.}
-% 	    \end{itemize}
-% 	\item
-% 	  \projectheading{TBD}
-% 	    \begin{itemize}
-% 	     \item{TBD}
-% 	    \end{itemize}
-% 	\end{itemize}
-
 \end{document}
